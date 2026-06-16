@@ -4,57 +4,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — THÁI HOÀNG NHÂN</title>
+  <title>Thái Hoàng Nhân — Software Engineer Portfolio</title>
+  <meta name="description"
+    content="Hồ sơ năng lực của Thái Hoàng Nhân, Kỹ sư phần mềm chuyên về Backend .NET Core và Fullstack React. Thiết kế hệ thống Clean Architecture, Microservices chất lượng cao." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- BACKGROUND GLOWS -->
+  <div class="glow-bg glow-bg--1"></div>
+  <div class="glow-bg glow-bg--2"></div>
+
+  <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">dev<span>.</span></a>
+      <a href="#hero" class="nav__logo">nhan<span>.</span>dev</a>
       <ul class="nav__links">
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">Về tôi</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
         <li><a href="#experience">Kinh nghiệm</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#why-me">Tại sao chọn tôi</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
       </ul>
-      <a href="#contact" class="btn btn--sm">Liên hệ</a>
+      <a href="https://www.overleaf.com/download/project/6a16d71a6c4351281e28c4cf/build/19ecfd4430d-4baaeabe03738cea/output/output.pdf?compileGroup=standard&clsiserverid=clsi-pre-emp-c3d-c-f-t0c7&enable_pdf_caching=true&popupDownload=true&editorId=03ba4a19-2621-4f74-a5c3-7d4dceb150b6"
+        target="_blank" class="btn btn--sm btn--outline nav__cv-btn">
+        Tải CV
+      </a>
       <button class="nav__burger" id="navBurger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="navMobile">
-      <a href="#skills">Skills</a>
+      <a href="#about">Về tôi</a>
+      <a href="#skills">Kỹ năng</a>
       <a href="#experience">Kinh nghiệm</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#projects">Dự án</a>
+      <a href="#why-me">Tại sao chọn tôi</a>
+      <a href="#contact">Liên hệ</a>
+      <a href="https://www.overleaf.com/download/project/6a16d71a6c4351281e28c4cf/build/19ecfd4430d-4baaeabe03738cea/output/output.pdf?compileGroup=standard&clsiserverid=clsi-pre-emp-c3d-c-f-t0c7&enable_pdf_caching=true&popupDownload=true&editorId=03ba4a19-2621-4f74-a5c3-7d4dceb150b6"
+        target="_blank" class="btn btn--sm btn--outline"
+        style="margin-top: 8px; text-align: center; justify-content: center;">
+        Tải CV
+      </a>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero" id="hero">
-    <div class="hero__bg-grid"></div>
     <div class="container hero__inner">
       <div class="hero__text">
-        <p class="hero__greeting">Xin chào, tôi là 👋</p>
-        <h1 class="hero__name">Thái Hoàng Nhân</h1>
-        <h2 class="hero__role">
+        <div class="hero__badge reveal">
+          <span class="dot dot--green"></span> Sẵn sàng đón nhận cơ hội mới
+        </div>
+        <p class="hero__greeting reveal">Xin chào, tôi là 👋</p>
+        <h1 class="hero__name reveal">Thái Hoàng Nhân</h1>
+        <h2 class="hero__role reveal">
           <span class="typed-wrap">
             <span class="typed" id="typed"></span><span class="cursor">|</span>
           </span>
         </h2>
-        <p class="hero__bio">
-          Tôi xây dựng những sản phẩm web hiệu năng cao, trải nghiệm người dùng mượt mà và code sạch đẹp.
-          Đam mê open-source và luôn học hỏi công nghệ mới.
+        <p class="hero__bio reveal">
+          Tôi là một Kỹ sư phần mềm chuyên thiết kế và xây dựng các hệ thống Backend hiệu năng cao bằng **ASP.NET Core
+          (C#)** kết hợp phát triển giao diện hiện đại với **React (TypeScript)**. Đam mê trong việc học hỏi, thiết kế
+          hệ thống (System Design), dễ dàng maintain và mở rộng.
         </p>
-        <div class="hero__actions">
+        <div class="hero__actions reveal">
           <a href="#projects" class="btn btn--primary">Xem dự án</a>
           <a href="https://www.overleaf.com/download/project/6a16d71a6c4351281e28c4cf/build/19ecfd4430d-4baaeabe03738cea/output/output.pdf?compileGroup=standard&clsiserverid=clsi-pre-emp-c3d-c-f-t0c7&enable_pdf_caching=true&popupDownload=true&editorId=03ba4a19-2621-4f74-a5c3-7d4dceb150b6"
             target="_blank" class="btn btn--outline">
@@ -64,187 +85,283 @@
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Tải CV
+            Tải CV ứng tuyển
           </a>
         </div>
-        <div class="hero__socials">
-          <a href="#" aria-label="GitHub" class="social-icon">
+        <div class="hero__socials reveal">
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
             </svg>
           </a>
-          <a href="#" aria-label="LinkedIn" class="social-icon">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
           </a>
-          <a href="mailto:your@email.com" aria-label="Email" class="social-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="mailto:thaihoangnhan@email.com" aria-label="Email" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="M2 7l10 7 10-7" />
             </svg>
           </a>
         </div>
       </div>
-      <div class="hero__avatar-wrap">
+      <div class="hero__avatar-wrap reveal">
         <div class="hero__avatar">
-          <div class="avatar-placeholder">
+          <div class="avatar-glow"></div>
+          <div class="avatar-inner">
             <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="38" r="18" fill="#c7d2fe" />
-              <ellipse cx="50" cy="75" rx="26" ry="18" fill="#c7d2fe" />
+              <defs>
+                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a855f7" />
+                  <stop offset="100%" stop-color="#6366f1" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="46" stroke="url(#avatarGrad)" stroke-width="1.5" />
+              <path d="M50 22a15 15 0 100 30 15 15 0 000-30z" fill="url(#avatarGrad)" opacity="0.85" />
+              <path d="M50 58c-20 0-32 12-32 20v4h64v-4c0-8-12-20-32-20z" fill="url(#avatarGrad)" opacity="0.85" />
             </svg>
           </div>
-          <div class="hero__badge hero__badge--1">
-            <span>🚀</span> Open to work
-          </div>
-          <div class="hero__badge hero__badge--2">
-            <span class="dot dot--green"></span> Available
+          <div class="avatar-badge">
+            <span>C# & .NET</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 5v14M5 12l7 7 7-7" />
-      </svg>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Giới thiệu</p>
+        <h2 class="section-title">Về Bản Thân Tôi</h2>
+      </div>
+      <div class="about__layout">
+        <div class="about__content reveal">
+          <p class="about__text">
+            Tôi là một nhà phát triển phần mềm đầy nhiệt huyết với hơn 3 năm kinh nghiệm thực tế trong việc phát triển
+            hệ thống web doanh nghiệp chất lượng cao. Định hướng phát triển của tôi tập trung sâu vào các công nghệ của
+            Microsoft, đặc biệt là **ASP.NET Core (C#)** và hệ sinh thái liên quan, đồng thời sử dụng thành thạo
+            **React** cho các giao diện người dùng đòi hỏi tính tương tác cao.
+          </p>
+          <p class="about__text">
+            Tôi theo đuổi triết lý viết mã nguồn rõ ràng, dễ bảo trì bằng cách tuân thủ nghiêm ngặt nguyên lý **SOLID**,
+            thiết kế kiến trúc theo **Clean Architecture (DDD/CQRS)** và viết các bài kiểm thử tự động (Unit/Integration
+            Test) đầy đủ. Tôi tin rằng một hệ thống tốt không chỉ chạy đúng mà còn phải có khả năng mở rộng tốt và vận
+            hành ổn định lâu dài.
+          </p>
+          <div class="about__highlights">
+            <div class="highlight-item">
+              <span class="highlight-item__icon">🏗️</span>
+              <div>
+                <h4 class="highlight-item__title">Kiến trúc hệ thống</h4>
+                <p class="highlight-item__desc">Thành thạo thiết kế kiến trúc Clean Architecture, CQRS với MediatR và
+                  ứng dụng Microservices.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-item__icon">⚡</span>
+              <div>
+                <h4 class="highlight-item__title">Tối ưu hiệu năng</h4>
+                <p class="highlight-item__desc">Kinh nghiệm tối ưu hóa câu lệnh SQL, cơ chế Caching và truyền thông điệp
+                  bất đồng bộ qua Message Broker.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATS BLOCK inside About -->
+        <div class="about__stats reveal">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="3">0</span>
+              <span class="stat-card__label">Năm kinh nghiệm</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="15">0</span>
+              <span class="stat-card__label">Dự án hoàn thành</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="12">0</span>
+              <span class="stat-card__label">Công nghệ thành thạo</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="600">0</span>
+              <span class="stat-card__label">GitHub Commits</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- TECHNICAL SKILLS -->
   <section class="section skills" id="skills">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">What I work with</p>
-        <h2 class="section-title">Skills & Tech Stack</h2>
+        <p class="section-label">Năng lực cốt lõi</p>
+        <h2 class="section-title">Kỹ Năng Kỹ Thuật</h2>
       </div>
       <div class="skills__grid">
-        <div class="skill-category reveal">
-          <h3 class="skill-category__title">Frontend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--blue">React</span>
-            <span class="skill-tag skill-tag--blue">Redux</span>
-            <span class="skill-tag skill-tag--blue">Vite</span>
-            <span class="skill-tag skill-tag--blue">Ant Design</span>
-            <span class="skill-tag skill-tag--blue">Material UI</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <h3 class="skill-category__title">Backend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--purple">ASP.NET Core</span>
-            <span class="skill-tag skill-tag--purple">Entity Framework Core</span>
-            <span class="skill-tag skill-tag--purple">REST APIs</span>
-            <span class="skill-tag skill-tag--purple">SignalR</span>
-            <span class="skill-tag skill-tag--purple">JWT Authentication</span>
-            <span class="skill-tag skill-tag--purple">RabbitMQ</span>
-            <span class="skill-tag skill-tag--purple">gRPC</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <h3 class="skill-category__title">Architecture</h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--orange">Microservices</span>
-            <span class="skill-tag skill-tag--orange">Domain-Driven Design</span>
-            <span class="skill-tag skill-tag--orange">Clean Architecture</span>
-            <span class="skill-tag skill-tag--orange">CQRS</span>
-            <span class="skill-tag skill-tag--orange">Event-Driven Architecture</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <h3 class="skill-category__title">Tools & DevOps</h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--green">Git</span>
-            <span class="skill-tag skill-tag--green">Docker</span>
-            <span class="skill-tag skill-tag--green">Github Actions</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- Stats bar -->
-      <div class="stats reveal">
-        <div class="stat">
-          <span class="stat__number" data-target="3">0</span>
-          <span class="stat__label">Năm kinh nghiệm</span>
+        <div class="skill-card reveal">
+          <div class="skill-card__header">
+            <span class="skill-card__icon">⚙️</span>
+            <h3 class="skill-card__title">Backend Development</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">C# (.NET 8)</span>
+            <span class="skill-tag">ASP.NET Core</span>
+            <span class="skill-tag">Entity Framework Core</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Redis Caching</span>
+            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">gRPC</span>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat__number" data-target="20">0</span>
-          <span class="stat__label">Dự án tham gia</span>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__header">
+            <span class="skill-card__icon">💻</span>
+            <h3 class="skill-card__title">Frontend Development</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Redux / Context API</span>
+            <span class="skill-tag">HTML5 & CSS3</span>
+            <span class="skill-tag">TailwindCSS</span>
+            <span class="skill-tag">Material UI</span>
+            <span class="skill-tag">Ant Design</span>
+            <span class="skill-tag">ES6+ JavaScript</span>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat__number" data-target="15">0</span>
-          <span class="stat__label">Công nghệ thành thạo</span>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__header">
+            <span class="skill-card__icon">🏛️</span>
+            <h3 class="skill-card__title">Architecture & Patterns</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Clean Architecture</span>
+            <span class="skill-tag">Domain-Driven Design (DDD)</span>
+            <span class="skill-tag">CQRS Pattern</span>
+            <span class="skill-tag">MediatR</span>
+            <span class="skill-tag">SignalR (Realtime)</span>
+            <span class="skill-tag">JWT Authentication</span>
+            <span class="skill-tag">Microservices Architecture</span>
+            <span class="skill-tag">RESTful APIs</span>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat__number" data-target="500">0</span>
-          <span class="stat__label">GitHub Commits</span>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__header">
+            <span class="skill-card__icon">🚀</span>
+            <h3 class="skill-card__title">DevOps & Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">CI/CD Pipeline</span>
+            <span class="skill-tag">xUnit / Moq</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Agile / Scrum</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE & EDUCATION -->
   <section class="section experience" id="experience">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">My Journey</p>
-        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+        <p class="section-label">Hành trình</p>
+        <h2 class="section-title">Kinh Nghiệm & Học Vấn</h2>
       </div>
       <div class="timeline">
 
+        <!-- Exp 1 -->
         <div class="timeline__item reveal">
           <div class="timeline__dot"></div>
           <div class="timeline__time">03/2024 - Hiện tại</div>
           <div class="timeline__content">
-            <h3 class="timeline__role">Senior .NET / Full-Stack Developer</h3>
-            <h4 class="timeline__company">Công ty Công nghệ ABC</h4>
+            <h3 class="timeline__role">Senior .NET / Fullstack Developer</h3>
+            <h4 class="timeline__company">FPT Software</h4>
             <p class="timeline__desc">
-              Phát triển hệ thống microservices phục vụ hàng nghìn người dùng đồng thời, tối ưu hóa database và xây dựng
-              các tính năng realtime.
+              Phát triển và bảo trì hệ thống đặt vé và quản lý chuyến bay cho đối tác quốc tế lớn, vận hành dưới kiến
+              trúc Microservices và Clean Architecture.
             </p>
             <ul class="timeline__bullets">
-              <li>Thiết kế cấu trúc Microservices bằng ASP.NET Core và triển khai trên Docker/Kubernetes.</li>
-              <li>Tối ưu hóa các câu lệnh SQL Server và Entity Framework Core, cải thiện 35% tốc độ truy vấn.</li>
-              <li>Xây dựng module real-time notifications sử dụng SignalR và RabbitMQ message broker.</li>
+              <li>Thiết kế và phát triển dịch vụ Core Ticket Booking sử dụng ASP.NET Core Web API, tích hợp cổng thanh
+                toán Stripe.</li>
+              <li>Chuyển đổi các tác vụ đồng bộ nặng sang xử lý bất đồng bộ sử dụng RabbitMQ làm Message Broker, giảm
+                thời gian phản hồi API đi 40%.</li>
+              <li>Xây dựng trang Dashboard quản lý hiệu suất chuyến bay thời gian thực bằng React và SignalR.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Exp 2 -->
         <div class="timeline__item reveal">
           <div class="timeline__dot"></div>
           <div class="timeline__time">06/2022 - 02/2024</div>
           <div class="timeline__content">
-            <h3 class="timeline__role">Full-Stack Developer</h3>
-            <h4 class="timeline__company">Giải pháp Phần mềm XYZ</h4>
+            <h3 class="timeline__role">Software Engineer (.NET + React)</h3>
+            <h4 class="timeline__company">VNG Corporation</h4>
             <p class="timeline__desc">
-              Tham gia xây dựng các sản phẩm Web Enterprise và thương mại điện tử sử dụng React và .NET Core API.
+              Tham gia thiết kế và lập trình các tính năng mới cho nền tảng mạng xã hội chuyên ngành công nghệ.
             </p>
             <ul class="timeline__bullets">
-              <li>Phát triển các component React tái sử dụng, tối ưu hóa giao diện người dùng mượt mà với Ant Design và
-                Vite.</li>
-              <li>Xây dựng RESTful API bảo mật cao với JWT Authentication và phân quyền chi tiết.</li>
-              <li>Tích hợp cổng thanh toán Stripe và hệ thống gửi mail tự động cho khách hàng.</li>
+              <li>Tối ưu hóa câu truy vấn cơ sở dữ liệu PostgreSQL và Entity Framework Core, cải thiện 30% tốc độ tải
+                trang.</li>
+              <li>Thiết kế hệ thống xác thực tập trung sử dụng JWT, tích hợp phân quyền động (Role-based & Policy-based
+                Access Control).</li>
+              <li>Phát triển các component React tái sử dụng với TypeScript và Redux Toolkit, nâng cao trải nghiệm ứng
+                dụng SPA.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Exp 3 -->
         <div class="timeline__item reveal">
           <div class="timeline__dot"></div>
           <div class="timeline__time">09/2021 - 05/2022</div>
           <div class="timeline__content">
-            <h3 class="timeline__role">Thực tập sinh Lập trình Web</h3>
-            <h4 class="timeline__company">Công ty Cổ phần TechSoft</h4>
+            <h3 class="timeline__role">Web Developer Intern</h3>
+            <h4 class="timeline__company">Shopee Việt Nam</h4>
             <p class="timeline__desc">
-              Làm quen với quy trình phát triển phần mềm chuyên nghiệp (Agile/Scrum), hỗ trợ phát triển frontend.
+              Hỗ trợ nhóm phát triển các trang quản trị vận hành và chăm sóc khách hàng nội bộ.
             </p>
             <ul class="timeline__bullets">
-              <li>Hỗ trợ viết Unit Test cho cả Frontend (Jest) và Backend (xUnit).</li>
-              <li>Sửa lỗi UI/UX và cải thiện tính tương thích responsive trên các trình duyệt di động.</li>
+              <li>Hỗ trợ viết mã nguồn kiểm thử tự động sử dụng xUnit cho Backend và Jest cho Frontend, nâng cao độ tin
+                cậy mã nguồn.</li>
+              <li>Tham gia sửa lỗi UI/UX và tối ưu hiển thị Responsive trên thiết bị di động bằng CSS Grid/Flexbox.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot edu-dot"></div>
+          <div class="timeline__time">2018 - 2022</div>
+          <div class="timeline__content edu-content">
+            <h3 class="timeline__role">Cử nhân Công nghệ Thông tin</h3>
+            <h4 class="timeline__company">Trường Đại học Bách Khoa TP.HCM (HCMUT)</h4>
+            <p class="timeline__desc">
+              Tốt nghiệp chuyên ngành Khoa học Máy tính. Điểm trung bình tích lũy GPA: 3.4/4.0.
+            </p>
+            <ul class="timeline__bullets">
+              <li>Đề tài tốt nghiệp đạt điểm tối đa (10/10) về đề tài "Hệ thống quản lý dữ liệu lớn phi tập trung".</li>
+              <li>Đạt học bổng khuyến khích học tập của trường trong 3 học kỳ liên tiếp.</li>
             </ul>
           </div>
         </div>
@@ -253,117 +370,159 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- FEATURED PROJECTS -->
   <section class="section projects" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">What I've built</p>
-        <h2 class="section-title">Projects</h2>
+        <p class="section-label">Sản phẩm tiêu biểu</p>
+        <h2 class="section-title">Dự Án Cá Nhân Nổi Bật</h2>
       </div>
       <div class="projects__grid">
 
+        <!-- Project 1 -->
         <article class="project-card reveal featured">
-          <div class="project-card__top">
-            <div class="project-card__icon">⚡</div>
+          <div class="project-card__visual">
+            <div class="mockup-screen">
+              <div class="mockup-navbar">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <div class="mockup-address">e-commerce-microservices.dev</div>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-hero-shape"></div>
+                <div class="mockup-flex">
+                  <div class="mockup-item"></div>
+                  <div class="mockup-item"></div>
+                  <div class="mockup-item"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__badge">Featured Project</div>
+            <h3 class="project-card__title">E-commerce Microservices Platform</h3>
+            <p class="project-card__desc">
+              Một hệ thống thương mại điện tử hoàn chỉnh được thiết kế theo kiến trúc Microservices. Dự án giả lập các
+              nghiệp vụ mua bán hàng trực tuyến với hiệu năng cao và chịu tải lớn.
+            </p>
+            <div class="project-card__achievements">
+              <h4>Thành tựu chính:</h4>
+              <ul>
+                <li>Thiết kế hệ thống giao tiếp bất đồng bộ giữa các dịch vụ thông qua RabbitMQ (Event-Driven
+                  Architecture).</li>
+                <li>Tích hợp cơ chế bộ nhớ đệm Redis giúp giảm 65% tải cho cơ sở dữ liệu PostgreSQL.</li>
+                <li>Xử lý thanh toán an toàn thời gian thực với Stripe API và bảo mật token JWT.</li>
+              </ul>
+            </div>
+            <div class="project-card__tags">
+              <span>ASP.NET
+                Core</span><span>React</span><span>RabbitMQ</span><span>gRPC</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span>
+            </div>
             <div class="project-card__links">
-              <a href="#" class="icon-link" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+              <a href="https://github.com" target="_blank" class="btn btn--sm btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                 </svg>
+                Mã nguồn
               </a>
-              <a href="#" class="icon-link" aria-label="Live demo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
+              <a href="https://google.com" target="_blank" class="btn btn--sm btn--primary">
+                Xem thử demo
               </a>
             </div>
           </div>
-          <h3 class="project-card__title">Project Alpha</h3>
-          <p class="project-card__desc">
-            Nền tảng SaaS giúp các team quản lý task thông minh với AI. Real-time collaboration, dashboard analytics và
-            tích hợp Slack/Notion.
-          </p>
-          <div class="project-card__tags">
-            <span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>OpenAI</span>
-          </div>
-          <span class="project-card__badge">Featured</span>
         </article>
 
+        <!-- Project 2 -->
         <article class="project-card reveal">
-          <div class="project-card__top">
-            <div class="project-card__icon">🛒</div>
-            <div class="project-card__links">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+          <div class="project-card__visual">
+            <div class="mockup-screen">
+              <div class="mockup-navbar">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <div class="mockup-address">coder-network.dev</div>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-circles">
+                  <div class="circle-sm"></div>
+                  <div class="circle-sm"></div>
+                </div>
+                <div class="mockup-lines">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <h3 class="project-card__title">E-Commerce Platform</h3>
-          <p class="project-card__desc">
-            Full-stack e-commerce với giỏ hàng, thanh toán Stripe, quản lý inventory và admin dashboard.
-          </p>
-          <div class="project-card__tags">
-            <span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <div class="project-card__icon">📊</div>
-            <div class="project-card__links">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Social Network Application</h3>
+            <p class="project-card__desc">
+              Mạng xã hội nội bộ kết nối cộng đồng lập trình viên, hỗ trợ đăng tải bài viết, tương tác bình luận, gửi
+              tin nhắn trực tiếp thời gian thực.
+            </p>
+            <div class="project-card__achievements">
+              <h4>Thành tựu chính:</h4>
+              <ul>
+                <li>Thiết kế cấu trúc dự án chuẩn **Clean Architecture** giúp tách biệt tối đa nghiệp vụ.</li>
+                <li>Áp dụng pattern **CQRS** (Command Query Responsibility Segregation) thông qua thư viện MediatR.</li>
+                <li>Tích hợp SignalR giúp cập nhật bảng tin, tin nhắn và thông báo tức thời (realtime).</li>
+              </ul>
             </div>
-          </div>
-          <h3 class="project-card__title">Analytics Dashboard</h3>
-          <p class="project-card__desc">
-            Dashboard realtime hiển thị dữ liệu kinh doanh với biểu đồ đẹp, filter nâng cao và export PDF/Excel.
-          </p>
-          <div class="project-card__tags">
-            <span>Vue.js</span><span>Python</span><span>FastAPI</span><span>Chart.js</span>
+            <div class="project-card__tags">
+              <span>React</span><span>TypeScript</span><span>ASP.NET Core</span><span>Clean
+                Architecture</span><span>CQRS</span><span>PostgreSQL</span><span>SignalR</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" class="btn btn--sm btn--outline">
+                Mã nguồn
+              </a>
+              <a href="https://google.com" target="_blank" class="btn btn--sm btn--primary">
+                Demo
+              </a>
+            </div>
           </div>
         </article>
 
+        <!-- Project 3 -->
         <article class="project-card reveal">
-          <div class="project-card__top">
-            <div class="project-card__icon">🤖</div>
-            <div class="project-card__links">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+          <div class="project-card__visual">
+            <div class="mockup-screen">
+              <div class="mockup-navbar">
+                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                <div class="mockup-address">realtime-comments-widget.dev</div>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-chat">
+                  <div class="chat-bubble left"></div>
+                  <div class="chat-bubble right"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <h3 class="project-card__title">AI Chatbot CLI</h3>
-          <p class="project-card__desc">
-            Chatbot dòng lệnh dùng Anthropic Claude API, hỗ trợ lịch sử hội thoại và streaming response.
-          </p>
-          <div class="project-card__tags">
-            <span>Python</span><span>Claude API</span><span>Rich</span>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Real-time Comment System</h3>
+            <p class="project-card__desc">
+              Một Widget Engine nhẹ cho phép nhúng trực tiếp vào các trang blog hoặc tin tức để hỗ trợ bình luận và
+              tương tác trực tiếp realtime.
+            </p>
+            <div class="project-card__achievements">
+              <h4>Thành tựu chính:</h4>
+              <ul>
+                <li>Xử lý truyền dữ liệu đồng thời hàng nghìn client nhờ cơ chế WebSockets của SignalR.</li>
+                <li>Sử dụng Redis Pub/Sub để đồng bộ hóa tin nhắn giữa nhiều instance server chạy song song.</li>
+                <li>Lưu trữ dữ liệu phi cấu trúc tối ưu bằng MongoDB.</li>
+              </ul>
+            </div>
+            <div class="project-card__tags">
+              <span>TypeScript</span><span>ASP.NET Core</span><span>SignalR</span><span>Redis
+                Pub/Sub</span><span>MongoDB</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" class="btn btn--sm btn--outline">
+                Mã nguồn
+              </a>
+              <a href="https://google.com" target="_blank" class="btn btn--sm btn--primary">
+                Demo
+              </a>
+            </div>
           </div>
         </article>
 
@@ -371,62 +530,132 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- WHY HIRE ME -->
+  <section class="section why-me" id="why-me">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Giá trị cốt lõi</p>
+        <h2 class="section-title">Tại Sao Nên Chọn Tôi?</h2>
+      </div>
+      <div class="why-me__grid">
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">🎯</div>
+          <h3 class="why-me-card__title">Kiến thức Backend Vững vàng</h3>
+          <p class="why-me-card__desc">
+            Hiểu sâu cơ chế hoạt động của ASP.NET Core, tối ưu hóa truy vấn CSDL, kiểm soát luồng xử lý luồng đồng thời
+            và bảo mật hệ thống.
+          </p>
+        </div>
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">📐</div>
+          <h3 class="why-me-card__title">Tư duy Kiến trúc & SOLID</h3>
+          <p class="why-me-card__desc">
+            Luôn hướng tới mã nguồn sạch. Thiết kế hệ thống tuân thủ nghiêm ngặt nguyên lý SOLID, Clean Architecture và
+            ứng dụng các Design Patterns thông minh.
+          </p>
+        </div>
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">🧩</div>
+          <h3 class="why-me-card__title">Tư duy Giải quyết Vấn đề</h3>
+          <p class="why-me-card__desc">
+            Phân tích vấn đề một cách logic và khoa học. Tìm kiếm giải pháp tối ưu và nhanh chóng gỡ rối hệ thống khi
+            xảy ra sự cố.
+          </p>
+        </div>
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">🧠</div>
+          <h3 class="why-me-card__title">Khả năng tự học xuất sắc</h3>
+          <p class="why-me-card__desc">
+            Liên tục cập nhật công nghệ mới, chủ động nghiên cứu tài liệu kỹ thuật nâng cao và áp dụng thực tế để nâng
+            cao chất lượng dự án.
+          </p>
+        </div>
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">👥</div>
+          <h3 class="why-me-card__title">Hợp tác & Giao tiếp tốt</h3>
+          <p class="why-me-card__desc">
+            Làm việc nhóm hiệu quả theo quy trình Agile/Scrum. Giao tiếp mạch lạc giữa đội ngũ Backend, Frontend và QA
+            để tối ưu năng suất dự án.
+          </p>
+        </div>
+
+        <div class="why-me-card reveal">
+          <div class="why-me-card__icon">🌟</div>
+          <h3 class="why-me-card__title">Làm chủ Fullstack</h3>
+          <p class="why-me-card__desc">
+            Không chỉ làm tốt Backend, tôi có khả năng phối hợp hoặc trực tiếp xây dựng giao diện frontend
+            React/TypeScript mượt mà, tối ưu trải nghiệm.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">Get in touch</p>
-        <h2 class="section-title">Liên hệ tuyển dụng</h2>
-        <p class="section-sub">Bạn đang tìm kiếm một nhân sự phù hợp cho đội ngũ của mình? Hãy kết nối với tôi.</p>
+        <p class="section-label">Kết nối</p>
+        <h2 class="section-title">Liên Hệ Tuyển Dụng</h2>
+        <p class="section-sub">Bạn đang cần tìm kiếm một Kỹ sư phần mềm vững chuyên môn, có tinh thần trách nhiệm cao
+          cho đội ngũ của mình? Hãy liên hệ với tôi.</p>
       </div>
       <div class="contact__layout">
         <div class="contact__info reveal">
-          <div class="contact-item">
-            <div class="contact-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="contact-card-item">
+            <div class="contact-card-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="M2 7l10 7 10-7" />
               </svg>
             </div>
             <div>
-              <p class="contact-item__label">Email</p>
-              <a href="mailto:your@email.com" class="contact-item__value">your@email.com</a>
+              <p class="contact-card-item__label">Email</p>
+              <a href="mailto:thaihoangnhan@email.com" class="contact-card-item__value">thaihoangnhan@email.com</a>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-item__icon">
+          <div class="contact-card-item">
+            <div class="contact-card-item__icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
               </svg>
             </div>
             <div>
-              <p class="contact-item__label">GitHub</p>
-              <a href="#" class="contact-item__value">github.com/username</a>
+              <p class="contact-card-item__label">GitHub</p>
+              <a href="https://github.com" target="_blank" class="contact-card-item__value">github.com/hoangnhancs</a>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-item__icon">
+          <div class="contact-card-item">
+            <div class="contact-card-item__icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </div>
             <div>
-              <p class="contact-item__label">LinkedIn</p>
-              <a href="#" class="contact-item__value">linkedin.com/in/username</a>
+              <p class="contact-card-item__label">LinkedIn</p>
+              <a href="https://linkedin.com" target="_blank"
+                class="contact-card-item__value">linkedin.com/in/hoangnhancs</a>
             </div>
           </div>
         </div>
         <form class="contact__form reveal" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Tên của bạn</label>
+              <label for="name">Họ và Tên</label>
               <input type="text" id="name" placeholder="Nguyễn Văn A" required />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="you@example.com" required />
+              <label for="email">Email liên hệ</label>
+              <input type="email" id="email" placeholder="you@company.com" required />
             </div>
           </div>
           <div class="form-group">
@@ -434,13 +663,14 @@
             <input type="text" id="subject" placeholder="Cơ hội việc làm / Tuyển dụng..." />
           </div>
           <div class="form-group">
-            <label for="message">Tin nhắn</label>
+            <label for="message">Chi tiết cơ hội công việc hoặc nội dung tin nhắn</label>
             <textarea id="message" rows="5" placeholder="Mô tả cơ hội hợp tác hoặc vị trí tuyển dụng..."
               required></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">
-            <span>Gửi tin nhắn</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <span>Gửi tin nhắn tuyển dụng</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13" />
               <polygon points="22 2 15 22 11 13 2 9 22 2" />
             </svg>
@@ -454,11 +684,11 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">© 2026 Thái Hoàng Nhân. Built with passion.</p>
+      <p class="footer__copy">© 2026 Thái Hoàng Nhân. Designed with passion for Software Engineering.</p>
       <div class="footer__links">
-        <a href="#hero">Top</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero">Về đầu trang</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
       </div>
     </div>
   </footer>

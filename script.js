@@ -21,10 +21,10 @@ mobileMenu.querySelectorAll('a').forEach(a => {
    TYPED TEXT EFFECT
    ============================================ */
 const roles = [
-  'Full-Stack Developer',
-  'React Dev',
-  'Backend Developer',
-  'Open Source Lover',
+  'Software Engineer',
+  'Backend .NET Developer',
+  'Fullstack Developer (React + .NET)',
+  'Clean Architecture Advocate',
 ];
 
 let roleIdx = 0, charIdx = 0, deleting = false;
@@ -49,7 +49,9 @@ function typeLoop() {
   setTimeout(typeLoop, deleting ? 45 : 80);
 }
 
-typeLoop();
+if (typedEl) {
+  typeLoop();
+}
 
 /* ============================================
    SCROLL REVEAL
@@ -64,14 +66,14 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
 reveals.forEach(el => revealObserver.observe(el));
 
 /* ============================================
    ANIMATED COUNTER
    ============================================ */
-const counters = document.querySelectorAll('.stat__number');
+const counters = document.querySelectorAll('.stat-card__number');
 let countersStarted = false;
 
 const counterObserver = new IntersectionObserver((entries) => {
@@ -90,9 +92,11 @@ const counterObserver = new IntersectionObserver((entries) => {
       tick();
     });
   }
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
-if (counters.length) counterObserver.observe(counters[0].closest('.stats'));
+if (counters.length) {
+  counterObserver.observe(counters[0].closest('.about__stats'));
+}
 
 /* ============================================
    CONTACT FORM (demo)
@@ -100,24 +104,26 @@ if (counters.length) counterObserver.observe(counters[0].closest('.stats'));
 const form = document.getElementById('contactForm');
 const notice = document.getElementById('formNotice');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"] span');
-  const original = btn.textContent;
-  btn.textContent = 'Đang gửi...';
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"] span');
+    const original = btn.textContent;
+    btn.textContent = 'Đang gửi tin nhắn...';
 
-  await new Promise(r => setTimeout(r, 1200));
+    await new Promise(r => setTimeout(r, 1200));
 
-  notice.textContent = 'Cảm ơn bạn! Tôi sẽ phản hồi sớm nhất có thể.';
-  notice.className = 'form-notice success';
-  form.reset();
-  btn.textContent = original;
+    notice.textContent = 'Cảm ơn nhà tuyển dụng! Tôi sẽ phản hồi email của bạn sớm nhất có thể.';
+    notice.className = 'form-notice success';
+    form.reset();
+    btn.textContent = original;
 
-  setTimeout(() => {
-    notice.textContent = '';
-    notice.className = 'form-notice';
-  }, 5000);
-});
+    setTimeout(() => {
+      notice.textContent = '';
+      notice.className = 'form-notice';
+    }, 5000);
+  });
+}
 
 /* ============================================
    SMOOTH ACTIVE NAV LINK
@@ -131,7 +137,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
       const id = entry.target.getAttribute('id');
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === `#${id}`
-          ? 'var(--c-accent)'
+          ? 'var(--c-accent-2)'
           : '';
       });
     }
