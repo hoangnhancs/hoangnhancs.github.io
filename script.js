@@ -109,11 +109,11 @@ if (form) {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"] span');
     const original = btn.textContent;
-    btn.textContent = 'Đang gửi tin nhắn...';
+    btn.textContent = 'Sending...';
 
     await new Promise(r => setTimeout(r, 1200));
 
-    notice.textContent = 'Cảm ơn nhà tuyển dụng! Tôi sẽ phản hồi email của bạn sớm nhất có thể.';
+    notice.textContent = 'Thank you! I will get back to you as soon as possible.';
     notice.className = 'form-notice success';
     form.reset();
     btn.textContent = original;
