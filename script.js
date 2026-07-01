@@ -104,7 +104,7 @@ if (counters.length) {
 // Tự động nhận diện môi trường: Nếu chạy ở local thì gọi đến Backend (.NET), khi lên Vercel chạy cùng domain sẽ dùng relative path
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:5000' // Thay port backend local của bạn tại đây (ví dụ: http://localhost:5000 hoặc http://localhost:5088)
-  : 'https://api.ec.io.vn';
+  : 'https://contact.ec.io.vn';
 
 const form = document.getElementById('contactForm');
 const notice = document.getElementById('formNotice');
