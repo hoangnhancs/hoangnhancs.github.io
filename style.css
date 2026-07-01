@@ -1169,6 +1169,12 @@ ul {
   color: var(--c-text-dark);
 }
 
+.form-turnstile {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
 .form-notice {
   font-size: 0.85rem;
   text-align: center;

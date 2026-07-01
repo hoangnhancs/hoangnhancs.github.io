@@ -101,28 +101,102 @@ if (counters.length) {
 /* ============================================
    CONTACT FORM (demo)
    ============================================ */
+// Tự động nhận diện môi trường: Nếu chạy ở local thì gọi đến Backend (.NET), khi lên Vercel chạy cùng domain sẽ dùng relative path
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:5000' // Thay port backend local của bạn tại đây (ví dụ: http://localhost:5000 hoặc http://localhost:5088)
+  : 'https://api.ec.io.vn';
+
 const form = document.getElementById('contactForm');
 const notice = document.getElementById('formNotice');
 
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"] span');
-    const original = btn.textContent;
-    btn.textContent = 'Sending...';
 
-    await new Promise(r => setTimeout(r, 1200));
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
 
-    notice.textContent = 'Thank you! I will get back to you as soon as possible.';
-    notice.className = 'form-notice success';
-    form.reset();
-    btn.textContent = original;
+    // Basic Validation
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+      showNotice('Vui lòng điền đầy đủ các thông tin bắt buộc.', 'error');
+      return;
+    }
 
-    setTimeout(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value.trim())) {
+      showNotice('Email không hợp lệ. Vui lòng kiểm tra lại.', 'error');
+      return;
+    }
+
+    // Get Turnstile token
+    const turnstileToken = form.querySelector('[name="cf-turnstile-response"]')?.value
+      || window.turnstile?.getResponse();
+
+    if (!turnstileToken) {
+      showNotice('Vui lòng hoàn thành xác minh bảo mật (Turnstile).', 'error');
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnText = submitBtn.querySelector('span');
+    const original = btnText.textContent;
+    btnText.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          subject: subjectInput.value.trim() || 'No Subject',
+          message: messageInput.value.trim(),
+          turnstileToken: turnstileToken
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        showNotice(data.message || 'Gửi tin nhắn thành công!', 'success');
+        form.reset();
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      } else {
+        showNotice(data.message || 'Gửi thất bại. Vui lòng thử lại sau.', 'error');
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      }
+    } catch (err) {
+      console.error('Error sending email:', err);
+      showNotice('Đã xảy ra lỗi kết nối. Vui lòng kiểm tra mạng và thử lại.', 'error');
+      if (window.turnstile) {
+        window.turnstile.reset();
+      }
+    } finally {
+      btnText.textContent = original;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+function showNotice(text, type) {
+  notice.textContent = text;
+  notice.className = `form-notice ${type}`;
+
+  setTimeout(() => {
+    if (notice.textContent === text) {
       notice.textContent = '';
       notice.className = 'form-notice';
-    }, 5000);
-  });
+    }
+  }, 5000);
 }
 
 /* ============================================

@@ -13,6 +13,8 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Cloudflare Turnstile API -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -566,6 +568,10 @@
             <label for="message">Message details or job description</label>
             <textarea id="message" rows="5" placeholder="Describe the collaboration opportunity or job opening..."
               required></textarea>
+          </div>
+          <!-- Cloudflare Turnstile Widget (Replace Sitekey with your production Sitekey) -->
+          <div class="form-group form-turnstile">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADtxUyCr-tCucr6y" data-theme="dark"></div>
           </div>
           <button type="submit" class="btn btn--primary btn--full">
             <span>Send Message</span>
